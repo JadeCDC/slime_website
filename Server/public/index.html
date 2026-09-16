@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Finding Slimes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body class="parallax">
+
+    <div class="bubble tiny"></div>
+    <div class="bubble small"></div>
+    <div class="bubble medium"></div>
+    <div class="bubble large"></div>
+    <div class="bubble xlarge"></div>
+
+    <div class="vista-window" style="flex: 1 1 600px; min-width: 0;">
+        <div class="title-bar">
+            <span class="title-text">Finding Slimes!</span>
+            <div class="window-buttons">
+                <span class="btn min" title="Minimize"></span>
+                <span class="btn max" title="Maximize"></span>
+                <span class="btn close" title="Close"></span>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>Want to see all of them? Just leave the filters blank!</h3>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-3'>
+                    <label for="name">Slime Name</label>
+                </div>
+                <div class='col-md-9'>
+                    <input id='name' type='text' placeholder="e.g. Tabby Slime…" />
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-3'>
+                    <label for="habitat">Main Habitat</label>
+                </div>
+                <div class='col-md-9'>
+                    <input id='habitat' type='text' placeholder="e.g. Dry Reef…" />
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-3'>
+                    <label for="is_two">From Slime Rancher 2?</label>
+                </div>
+                <div class='col-md-9' style="display:flex;align-items:center;gap:8px;">
+                    <input id='is_two' type='checkbox' />
+                    <span class="helper-text">Check to filter SR2 slimes only</span>
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-3'>
+                    <label for="diet">Diet</label>
+                </div>
+                <div class='col-md-9'>
+                    <select id='diet'>
+                        <option value=''>— Any —</option>
+                        <option value='fruit'>Fruit</option>
+                        <option value='vegetables'>Vegetables</option>
+                        <option value='meat'>Meat</option>
+                        <option value='all'>All</option>
+                        <option value='None'>None</option>
+                        <option value='other'>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-3'>
+                    <label for="fav_food">Favorite Food</label>
+                </div>
+                <div class='col-md-9'>
+                    <input id='fav_food' type='text' placeholder="e.g. Pogofruit…" />
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-3'>
+                    <label for="is_largo">Exclude Largos?</label>
+                </div>
+                <div class='col-md-9' style="display:flex;align-items:center;gap:8px;">
+                    <input id='is_largo' type='checkbox' />
+                    <span class="helper-text">Check to hide largo variants</span>
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-3'>
+                    <label for="sort">Sort Order</label>
+                </div>
+                <div class='col-md-9'>
+                    <select id='sort'>
+                        <option value=''>— Default —</option>
+                        <option value='ASC'>Ascending (A → Z)</option>
+                        <option value='DESC'>Descending (Z → A)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-3'>
+                    <label for="limit">How many results?</label>
+                </div>
+                <div class='col-md-9'>
+                    <select id='limit'>
+                        <option value='5'>A few (5)</option>
+                        <option value='10'>Just enough (10)</option>
+                        <option value='25' selected>Good amount (25)</option>
+                        <option value='50'>A lot (50)</option>
+                        <option value='100'>Way too many (100)</option>
+                        <option value='250'>ALL THE SLIMES </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class='row-info mb-3' style="text-align:center;">
+                <button id='search'> Search for Slimes</button>
+            </div>
+
+            <div class='row-info mb-3'>
+                <p>Can't find a slime? <a href='insert.html'>Add it!</a></p>
+            </div>
+
+            <div id='slimes' class='overflow'>
+                <span style="opacity:0.65;">Your slimes will appear here…</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-right" style="flex: 0 0 220px;">
+    <div class="title-bar" style="border-radius:8px 8px 0 0; margin:-16px -16px 16px; padding:9px 12px;">
+        <span class="title-text">Frutiger Aero Gallery</span>
+    </div>
+
+    <div class="sidebar-slideshow">
+        <img src="images/asadal_stock_18.jpg">
+        <img src="images/asadal_stock_3.jpg">
+        <img src="images/asadal_stock_5.jpg">
+        <img src="images/asadal_stock_50.jpg">
+        <img src="images/asadal_stock_58.jpg">
+    </div>
+</div>
+
+    <script>
+        const isEmpty = (obj) => Object.keys(obj).length === 0;
+
+        document.getElementById('search').addEventListener('click', () => {
+            const getParameters = {};
+
+            if (document.getElementById('name').value.length)
+                getParameters.name = document.getElementById('name').value;
+
+            if (document.getElementById('habitat').value.length)
+                getParameters.habitat = document.getElementById('habitat').value;
+
+            if (document.getElementById('diet').value.length)
+                getParameters.diet = document.getElementById('diet').value;
+
+            if (document.querySelector('#is_two:checked'))
+                getParameters.is_two = 1;
+
+            if (document.querySelector('#is_largo:checked'))
+                getParameters.is_largo = 0;
+
+            if (document.getElementById('fav_food').value.length)
+                getParameters.fav_food = document.getElementById('fav_food').value;
+
+            if (document.getElementById('sort').value.length)
+                getParameters.sort = document.getElementById('sort').value;
+
+            if (document.getElementById('limit').value.length)
+                getParameters.limit = document.getElementById('limit').value;
+
+            const slimesEl = document.getElementById('slimes');
+            slimesEl.classList.add('loading');
+
+            fetch("http://localhost/slimes/" + (!isEmpty(getParameters) ? '?' + new URLSearchParams(getParameters) : ''), { method: 'GET' })
+                .then(response => response.json().then(json => ({ status: response.status, json })))
+                .then(({ status, json }) => {
+                    slimesEl.classList.remove('loading');
+                    if (status === 200) {
+                        let displayTable =
+                            '<table>' +
+                            '<thead><tr>' +
+                            '<th>Name</th><th>Habitat</th><th>From 2?</th><th>Diet</th><th>Largo?</th><th>Fav Food</th><th>Edit</th>' +
+                            '</tr></thead><tbody>';
+
+                        if (typeof json.data !== 'undefined' && json.data.length > 0) {
+                            for (const row of json.data) {
+                                displayTable +=
+                                    '<tr>' +
+                                    '<td>' + row.slime_name + '</td>' +
+                                    '<td>' + row.habitat_name + '</td>' +
+                                    '<td>' + (row.is_two ? '✓' : '✗') + '</td>' +
+                                    '<td>' + row.diet + '</td>' +
+                                    '<td>' + (row.is_largo ? '✓' : '✗') + '</td>' +
+                                    '<td>' + row.favorite_food + '</td>' +
+                                    '<td><a href="edit.html?id=' + row.id + '">Edit</a></td>' +
+                                    '</tr>';
+                            }
+                        } else {
+                            displayTable += '<tr><td colspan="7" style="text-align:center;opacity:0.7;">No slimes found 😢</td></tr>';
+                        }
+
+                        displayTable += '</tbody></table>';
+                        slimesEl.innerHTML = displayTable;
+                    }
+                })
+                .catch(error => {
+                    slimesEl.classList.remove('loading');
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Missing Slimes D:</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body class="parallax">
+    <div class="bubble tiny"></div>
+    <div class="bubble small"></div>
+    <div class="bubble medium"></div>
+    <div class="bubble large"></div>
+    <div class="bubble xlarge"></div>
+
+    <div class="vista-window" style="flex:1 1 100%; max-width:920px; margin:0 auto;">
+        <div class="title-bar">
+            <span class="title-text">Missing Slimes!!!</span>
+            <div class="window-buttons">
+                <span class="btn min" title="Minimize"></span>
+                <span class="btn max" title="Maximize"></span>
+                <span class="btn close" title="Close"></span>
+            </div>
+        </div>
+
+        <div id="error-container" class="mt-2"></div>
+
+        <div class="container">
+
+            <div class='row-info mb-3'>
+                <div class='col-md-2'><label for="name">Slime Name</label></div>
+                <div class='col-md-10'>
+                    <input id='name' type='text' placeholder="Enter the slime's name…" />
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-2'><label class="fw-bold">Favorite Foods</label></div>
+                <div class='col-md-10'>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="1" id="f1"><label class="form-check-label" for="f1">Stony Hen</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="2" id="f2"><label class="form-check-label" for="f2">Pomegranate</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="3" id="f3"><label class="form-check-label" for="f3">Silver Parsnip</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="4" id="f4"><label class="form-check-label" for="f4">Roostro</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="5" id="f5"><label class="form-check-label" for="f5">Pogofruit</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="6" id="f6"><label class="form-check-label" for="f6">Cuberry</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="7" id="f7"><label class="form-check-label" for="f7">Mint Mango</label></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="8" id="f8"><label class="form-check-label" for="f8">Phase Lemon</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="9" id="f9"><label class="form-check-label" for="f9">Prickle Pear</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="10" id="f10"><label class="form-check-label" for="f10">Carrot</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="11" id="f11"><label class="form-check-label" for="f11">Heart Beet</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="12" id="f12"><label class="form-check-label" for="f12">Oca Oca</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="13" id="f13"><label class="form-check-label" for="f13">Odd Onion</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="14" id="f14"><label class="form-check-label" for="f14">Gilded Ginger</label></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="15" id="f15"><label class="form-check-label" for="f15">Hen Hen</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="16" id="f16"><label class="form-check-label" for="f16">Briar Hen</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="17" id="f17"><label class="form-check-label" for="f17">Painted Hen</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="18" id="f18"><label class="form-check-label" for="f18">Elder Hen</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="19" id="f19"><label class="form-check-label" for="f19">Elder Roostro</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="21" id="f21"><label class="form-check-label" for="f21">Candied Hen</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="22" id="f22"><label class="form-check-label" for="f22">Moondew Nectar</label></div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="23" id="f23"><label class="form-check-label" for="f23">Polaricherry</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="24" id="f24"><label class="form-check-label" for="f24">Sea Hen</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="25" id="f25"><label class="form-check-label" for="f25">Thundercluck Hen</label></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="26" id="f26"><label class="form-check-label" for="f26">Turbo Tater</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="27" id="f27"><label class="form-check-label" for="f27">Water Lettuce</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="food_ids" value="28" id="f28"><label class="form-check-label" for="f28">None</label></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row-info mb-3'>
+                <div class='col-md-2'><label class="fw-bold">Habitats</label></div>
+                <div class='col-md-10'>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="1" id="h1"><label class="form-check-label" for="h1">Indigo Quarry</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="2" id="h2"><label class="form-check-label" for="h2">Dry Reef</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="3" id="h3"><label class="form-check-label" for="h3">Glass Desert</label></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="4" id="h4"><label class="form-check-label" for="h4">Ancient Ruins</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="5" id="h5"><label class="form-check-label" for="h5">Grey Labyrinth</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="6" id="h6"><label class="form-check-label" for="h6">Ember Valley</label></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="7" id="h7"><label class="form-check-label" for="h7">Rainbow Fields</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="8" id="h8"><label class="form-check-label" for="h8">Powderfall Bluffs</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="9" id="h9"><label class="form-check-label" for="h9">Conservatory</label></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="11" id="h11"><label class="form-check-label" for="h11">Starlight Strand</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="12" id="h12"><label class="form-check-label" for="h12">Moss Blanket</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="habitat_ids" value="13" id="h13"><label class="form-check-label" for="h13">All</label></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row-info mb-3'>
+                <div class='col-md-2'><label class="fw-bold">Diet</label></div>
+                <div class='col-md-10'>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="diet_ids" value="Meat" id="d1"><label class="form-check-label" for="d1">Meat</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="diet_ids" value="Fruit" id="d2"><label class="form-check-label" for="d2">Fruit</label></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="diet_ids" value="Vegetables" id="d3"><label class="form-check-label" for="d3">Vegetables</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="diet_ids" value="All" id="d4"><label class="form-check-label" for="d4">All</label></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="diet_ids" value="None" id="d5"><label class="form-check-label" for="d5">None</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" name="diet_ids" value="Other" id="d6"><label class="form-check-label" for="d6">Other</label></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row-info mb-3'>
+                <div class='col-md-2'><label for="is_two">From SR2?</label></div>
+                <div class='col-md-4' style="display:flex;align-items:center;gap:8px;">
+                    <input id='is_two' type='checkbox' />
+                    <span class="helper-text">Slime Rancher 2</span>
+                </div>
+                <div class='col-md-2'><label for="is_largo">Is a Largo?</label></div>
+                <div class='col-md-4' style="display:flex;align-items:center;gap:8px;">
+                    <input id='is_largo' type='checkbox' />
+                    <span class="helper-text">Largo variant</span>
+                </div>
+            </div>
+
+            <div class='row-info mb-3' style="text-align:center;">
+                <button id='search' type='button'>Add This Slime!</button>
+            </div>
+
+            <div class='row-info mb-3'>
+                <p>All done? <a href='index.html'>Back to the slime list!</a></p>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('search').addEventListener('click', () => {
+                const formData = new FormData();
+                formData.append('name', document.getElementById('name').value);
+
+                document.querySelectorAll('input[name="diet_ids"]:checked').forEach(cb => formData.append('diet_ids', cb.value));
+                document.querySelectorAll('input[name="food_ids"]:checked').forEach(cb => formData.append('food_ids', cb.value));
+                document.querySelectorAll('input[name="habitat_ids"]:checked').forEach(cb => formData.append('habitat_ids', cb.value));
+
+                formData.append('is_two', document.getElementById('is_two').checked ? '1' : '0');
+                formData.append('is_largo', document.getElementById('is_largo').checked ? '1' : '0');
+
+                fetch("http://localhost/slimes/", { method: 'POST', body: formData })
+                    .then(response => response.json().then(json => ({ status: response.status, json })))
+                    .then(({ status, json }) => {
+                        const errorContainer = document.getElementById('error-container');
+                        errorContainer.innerHTML = '';
+
+                        if (status === 400) {
+                            json.messages.forEach(msg => {
+                                const alert = document.createElement('div');
+                                alert.className = 'alert alert-danger alert-dismissible fade show';
+                                alert.innerHTML = `<strong>Error:</strong> ${msg}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
+                                errorContainer.appendChild(alert);
+                            });
+                        } else if (status === 200) {
+                            errorContainer.innerHTML = `<div class="alert alert-success">${json.message}</div>`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert("Could not connect to the server.");
+                    });
+            });
+        </script>
+    </div>
+</body>
+</html>
