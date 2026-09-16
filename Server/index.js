@@ -9,6 +9,14 @@ const { check, validationResult } = require('express-validator');
 const app = express();
 app.use(express.static('public'))
 
+//Stylesheet
+app.use(express.static(__dirname + '/public'));
+//Webpage
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
 const upload = multer()
 const port = 80 //Default port to http server
 
