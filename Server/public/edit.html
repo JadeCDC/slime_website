@@ -174,7 +174,7 @@
             const urlParams = new URLSearchParams(window.location.search);
 
             fetchMethod(
-                '/slimes/' + urlParams.get('id') + '/',
+                '/slime_website/Server/' + urlParams.get('id') + '/',
                 { method: 'GET' },
                 (status, json) => {
                     if (200 === status) {
@@ -231,7 +231,7 @@
                 if (document.getElementById('is_largo').checked) formData.append('is_largo', '1');
 
                 fetchMethod(
-                    '/slimes/' + urlParams.get('id') + '/',
+                    '/slime_website/Server/' + urlParams.get('id') + '/',
                     { method: 'PUT', body: formData },
                     (status, json) => {
                         if (status === 200) {

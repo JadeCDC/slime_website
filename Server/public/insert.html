@@ -167,7 +167,7 @@
                 formData.append('is_two', document.getElementById('is_two').checked ? '1' : '0');
                 formData.append('is_largo', document.getElementById('is_largo').checked ? '1' : '0');
 
-                fetch("/slime_website/", { method: 'POST', body: formData })
+                fetch("/slime_website/Server", { method: 'POST', body: formData })
                     .then(response => response.json().then(json => ({ status: response.status, json })))
                     .then(({ status, json }) => {
                         const errorContainer = document.getElementById('error-container');
