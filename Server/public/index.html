@@ -187,7 +187,7 @@
             const slimesEl = document.getElementById('slimes');
             slimesEl.classList.add('loading');
 
-            fetch("/slime_website/Server" + (!isEmpty(getParameters) ? '?' + new URLSearchParams(getParameters) : ''), { method: 'GET' })
+            fetch("/slime_website/" + (!isEmpty(getParameters) ? '?' + new URLSearchParams(getParameters) : ''), { method: 'GET' })
                 .then(response => response.json().then(json => ({ status: response.status, json })))
                 .then(({ status, json }) => {
                     slimesEl.classList.remove('loading');
