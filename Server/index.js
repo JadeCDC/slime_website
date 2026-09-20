@@ -40,7 +40,7 @@ async function query(sql, params) {
 
 //The * in app.* needs to match the method type of the request
 app.get(
-    '/slimes/',
+    '/slime_website/',
     upload.none(),
     async (request, response) => {
         let result = {};
@@ -134,7 +134,7 @@ app.get(
     });
 
 app.get(
-    '/slimes/:id/',
+    '/slime_website/:id/',
     upload.none(),
     async (request, response) => {
         try {
@@ -181,7 +181,7 @@ app.get(
         }
     });
 
-app.post('/slimes/',
+app.post('/slime_website/',
     upload.none(),
     check('name', 'Slime Name is required.').notEmpty(),
 
@@ -256,7 +256,7 @@ app.post('/slimes/',
 );
 
 app.put(
-    '/slimes/:id/',
+    '/slime_website/:id/',
     upload.none(),
     check('name', 'Slime Name is required.').notEmpty(),
 
