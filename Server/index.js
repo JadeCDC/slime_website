@@ -9,7 +9,6 @@ const { check, validationResult } = require('express-validator');
 const app = express();
 app.use(express.static('public'))
 
-const express = require("express");
 
 app.use(express.json());
 
