@@ -9,31 +9,6 @@ const { check, validationResult } = require('express-validator');
 const app = express();
 app.use(express.static('public'))
 
-
-app.use(express.json());
-
-app.post("/api/sensor", (req, res) => {
-
-    console.log(req.body);
-
-    res.json({
-        message: "Sensor data received"
-    });
-
-});
-
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
-});
-
-//Stylesheet
-app.use(express.static(__dirname + '/public'));
-//Webpage
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-
 const upload = multer()
 const port = 80 //Default port to http server
 
